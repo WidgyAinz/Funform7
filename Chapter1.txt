@@ -1,6 +1,6 @@
-"Puzzle Heist" by MW
+Final Project - Puzzle Heist" by Matthew Weaving
 
-The Mall Entrance is a room. "You stand at the entrance of the grand mall, ready to execute your plan. The security guard is on a break, and you have exactly 15 minutes to pull off the heist and escape. To the north is the clock tower. To the west is the food court. To the east, you see the Jewelry Store."
+The Mall Entrance is a room. "You stand at the entrance of the grand mall, ready to execute your plan. Fairly late at this time of day at this time of the week, there is almost no one around, the jewelry store has just closed, and the only guard for that area goes on break for 15 minutes. You have exactly 15 minutes to pull off the heist and escape. To the north is the clock tower. To the west is the food court. To the east, you see the Jewelry Store."
 
 The Jewelry Store is east of the Mall Entrance. "Sparkling diamonds and gold items are displayed in glass cases. There's a safe at the back. To the west is the mall entrance."
 
@@ -47,5 +47,3 @@ After taking the diamond necklace:
 Instead of going to the Mall Entrance when the player carries the diamond necklace:
 	say "You rush out of the mall, the diamond necklace safely in your possession. You've pulled off the heist!";
 	end the story saying "You've successfully pulled off the heist!";
-	
-
