@@ -1,1 +1,51 @@
+"Puzzle Heist" by MW
+
+The Mall Entrance is a room. "You stand at the entrance of the grand mall, ready to execute your plan. The security guard is on a break, and you have exactly 15 minutes to pull off the heist and escape. To the north is the clock tower. To the west is the food court. To the east, you see the Jewelry Store."
+
+The Jewelry Store is east of the Mall Entrance. "Sparkling diamonds and gold items are displayed in glass cases. There's a safe at the back. To the west is the mall entrance."
+
+The safe is a locked container in the Jewelry Store. The description is "A heavy-duty safe. It's locked tight, but you notice a small keypad for a combination."
+A person can be combination-aware or combination-unaware. A person is usually combination-unaware.
+The player is combination-unaware.
+		
+The diamond necklace is contained in the safe. The description is "A stunning diamond necklace, worth a fortune."
+
+The Food Court is west of the Mall Entrance. "Various food stalls surround you. The aroma of different cuisines fills the air. To the east, you see the way back to the mall entrance."
+
+The janitor is a person in the Food Court. "The janitor is mopping the floor, humming a tune."
+
+The combination note is an object.
+Instead of asking the janitor about "combination":
+	say "The janitor looks around and whispers, 'I found this piece of paper earlier. Looks like some sort of combination.' He hands it to you.";
+	move the combination note to the player.
+
+Instead of examining the combination note:
+	now the player is combination-aware;
+	say "You read the note and memorize the combination to the safe.";
+
+Instead of unlocking the safe with something:
+	if the player is combination-aware:
+		now the safe is unlocked;
+		say "You enter the combination and hear a click. The safe is now unlocked!";
+	else:
+		say "You don't know the combination to the safe.";
+
+The Clock Tower is north of the Mall Entrance. "A massive clock tower stands here, reminding you of the ticking time. It's a rainy day outside."
+
+The time left is a number that varies. The time left is 15.
+
+Every turn:
+	decrease the time left by 1;
+	if the time left is 0:
+		say "Time's up! The security guard returns and catches you in the act!";
+		end the story saying "You've been caught!";
+
+After taking the diamond necklace:
+	say "You've got the prize! Now, get out before time runs out!";
+	move the diamond necklace to the player.
+
+Instead of going to the Mall Entrance when the player carries the diamond necklace:
+	say "You rush out of the mall, the diamond necklace safely in your possession. You've pulled off the heist!";
+	end the story saying "You've successfully pulled off the heist!";
+	
 
